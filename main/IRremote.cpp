@@ -25,7 +25,9 @@
 #	include "RMT.h"
 #undef IR_GLOBAL
 
-
+#ifdef ESP32
+static const char* IRREMOTE_TAG = "IRRemote.cpp";
+#endif
 
 //+=============================================================================
 // The match functions were (apparently) originally MACROs to improve code speed
@@ -62,25 +64,26 @@ int  MATCH (int measured,  int desired)
 //
 int  MATCH_MARK (int measured_ticks,  int desired_us)
 {
-	DBG_PRINT(F("Testing mark (actual vs desired): "));
-	DBG_PRINT(measured_ticks * USECPERTICK, DEC);
-	DBG_PRINT(F("us vs "));
-	DBG_PRINT(desired_us, DEC);
-	DBG_PRINT("us"); 
-	DBG_PRINT(": ");
-	DBG_PRINT(TICKS_LOW(desired_us + MARK_EXCESS) * USECPERTICK, DEC);
-	DBG_PRINT(F(" <= "));
-	DBG_PRINT(measured_ticks * USECPERTICK, DEC);
-	DBG_PRINT(F(" <= "));
-	DBG_PRINT(TICKS_HIGH(desired_us + MARK_EXCESS) * USECPERTICK, DEC);
+	ESP_LOGD(IRREMOTE_TAG,"Testing mark (actual vs desired): ");
+	ESP_LOGD(IRREMOTE_TAG,"%d",measured_ticks * USECPERTICK);
+	ESP_LOGD(IRREMOTE_TAG,"us vs ");
+	ESP_LOGD(IRREMOTE_TAG,"%d",desired_us);
+	ESP_LOGD(IRREMOTE_TAG,"us");
+	ESP_LOGD(IRREMOTE_TAG,": ");
+	ESP_LOGD(IRREMOTE_TAG,"%d",TICKS_LOW(desired_us + MARK_EXCESS) * USECPERTICK);
+	ESP_LOGD(IRREMOTE_TAG," <= ");
+	ESP_LOGD(IRREMOTE_TAG,"%d",measured_ticks * USECPERTICK);
+	ESP_LOGD(IRREMOTE_TAG," <= ");
+	ESP_LOGD(IRREMOTE_TAG,"%d",TICKS_HIGH(desired_us + MARK_EXCESS) * USECPERTICK);
 
   bool passed = ((measured_ticks >= TICKS_LOW (desired_us + MARK_EXCESS))
                 && (measured_ticks <= TICKS_HIGH(desired_us + MARK_EXCESS)));
-  if (passed)
-    DBG_PRINTLN(F("?; passed"));
-  else
-    DBG_PRINTLN(F("?; FAILED")); 
- 	return passed;
+  if(passed){
+	  ESP_LOGD(IRREMOTE_TAG,"?; passed");
+  } else{
+	  ESP_LOGD(IRREMOTE_TAG,"?; FAILED");
+  }
+  return passed;
 }
 
 //+========================================================
@@ -94,7 +97,7 @@ int  MATCH_SPACE (int measured_ticks,  int desired_us)
 	DBG_PRINT(desired_us, DEC);
 	DBG_PRINT("us"); 
 	DBG_PRINT(": ");
-	DBG_PRINT(TICKS_LOW(desired_us - MARK_EXCESS) * USECPERTICK, DEC);
+	ESP_LOGD(IRREMOTE_TAG,"%d",(TICKS_LOW(desired_us - MARK_EXCESS) * USECPERTICK));
 	DBG_PRINT(F(" <= "));
 	DBG_PRINT(measured_ticks * USECPERTICK, DEC);
 	DBG_PRINT(F(" <= "));

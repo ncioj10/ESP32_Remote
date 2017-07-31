@@ -55,6 +55,8 @@ bool  IRrecv::decodeNEC (decode_results *results)
 	int   offset = 1;  // Index in to results; Skip first entry!?
 
 	// Check header "mark"
+	//ESP_LOGI("NEC_TAG","First rawbuff: %d", results->rawbuf[offset]);
+	//ESP_LOGI("NEC_TAG","Rawlength: %d", results->rawlen);
 	if (!MATCH_MARK(results->rawbuf[offset], NEC_HDR_MARK))  return false ;
 	offset++;
 

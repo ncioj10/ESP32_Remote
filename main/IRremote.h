@@ -133,6 +133,8 @@ decode_type_t;
 //------------------------------------------------------------------------------
 // Debug directives
 //
+
+
 #if DEBUG
 #	define DBG_PRINT(...)    Serial.print(__VA_ARGS__)
 #	define DBG_PRINTLN(...)  Serial.println(__VA_ARGS__)
@@ -179,6 +181,7 @@ class IRrecv
 	public:
 
 
+		RMTRemote rmt = RMTRemote(USECPERTICK);
 
 		IRrecv (int recvpin) ;
 		IRrecv (int recvpin, int blinkpin);
@@ -272,7 +275,7 @@ class IRsend
 
 
 
-
+		RMTRemote rmt = RMTRemote(USECPERTICK);
 
 		void  custom_delay_usec (unsigned long uSecs);
 		void  enableIROut 		(int khz) ;

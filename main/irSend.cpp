@@ -1,7 +1,7 @@
 #include "IRremote.h"
 #include "IRremoteInt.h"
 
-RMTRemote rmt = RMTRemote(USECPERTICK);
+
 
 //+=============================================================================
 void  IRsend::sendRaw (const unsigned int buf[],  unsigned int len,  unsigned int hz)

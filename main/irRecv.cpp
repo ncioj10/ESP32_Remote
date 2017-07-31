@@ -2,7 +2,7 @@
 #include "IRremoteInt.h"
 
 
-RMTRemote rmt = RMTRemote(USECPERTICK);
+static const char* RMT_TAG = "IRRemote";
 
 //+=============================================================================
 // Decodes the received IR message
@@ -11,80 +11,91 @@ RMTRemote rmt = RMTRemote(USECPERTICK);
 //
 int  IRrecv::decode (decode_results *results)
 {
+
+#if defined(ESP32)
+
+	while(irparams.rcvstate != STATE_NOBUF){
+		rmt.collectInput();
+#endif
+
+
 	results->rawbuf   = irparams.rawbuf;
+
+
 	results->rawlen   = irparams.rawlen;
+
 
 	results->overflow = irparams.overflow;
 
 	if (irparams.rcvstate != STATE_STOP)  return false ;
 
 #if DECODE_NEC
-	DBG_PRINTLN("Attempting NEC decode");
+	ESP_LOGI(RMT_TAG, "Attempting NEC decode");
 	if (decodeNEC(results))  return true ;
 #endif
 
 #if DECODE_SONY
-	DBG_PRINTLN("Attempting Sony decode");
+	ESP_LOGI(RMT_TAG, "Attempting Sony decode");
 	if (decodeSony(results))  return true ;
 #endif
 
 #if DECODE_SANYO
-	DBG_PRINTLN("Attempting Sanyo decode");
+	ESP_LOGI(RMT_TAG, "Attempting Sanyo decode");
 	if (decodeSanyo(results))  return true ;
 #endif
 
 #if DECODE_MITSUBISHI
-	DBG_PRINTLN("Attempting Mitsubishi decode");
+	ESP_LOGI(RMT_TAG, "Attempting Mitsubishi decode");
 	if (decodeMitsubishi(results))  return true ;
 #endif
 
 #if DECODE_RC5
-	DBG_PRINTLN("Attempting RC5 decode");
+	ESP_LOGI(RMT_TAG, "Attempting RC5 decode");
 	if (decodeRC5(results))  return true ;
 #endif
 
 #if DECODE_RC6
-	DBG_PRINTLN("Attempting RC6 decode");
+	ESP_LOGI(RMT_TAG, "Attempting RC6 decode");
 	if (decodeRC6(results))  return true ;
 #endif
 
 #if DECODE_PANASONIC
-	DBG_PRINTLN("Attempting Panasonic decode");
+	ESP_LOGI(RMT_TAG, "Attempting Panasonic decode");
 	if (decodePanasonic(results))  return true ;
 #endif
 
 #if DECODE_LG
-	DBG_PRINTLN("Attempting LG decode");
+	ESP_LOGI(RMT_TAG, "Attempting LG decode");
 	if (decodeLG(results))  return true ;
 #endif
 
 #if DECODE_JVC
-	DBG_PRINTLN("Attempting JVC decode");
+	ESP_LOGI(RMT_TAG, "Attempting JVC decode");
 	if (decodeJVC(results))  return true ;
 #endif
 
 #if DECODE_SAMSUNG
-	DBG_PRINTLN("Attempting SAMSUNG decode");
+	ESP_LOGI(RMT_TAG, "Attempting SAMSUNG decode");
 	if (decodeSAMSUNG(results))  return true ;
 #endif
 
 #if DECODE_WHYNTER
-	DBG_PRINTLN("Attempting Whynter decode");
+	ESP_LOGI(RMT_TAG, "Attempting Whynter decode");
 	if (decodeWhynter(results))  return true ;
 #endif
 
 #if DECODE_AIWA_RC_T501
-	DBG_PRINTLN("Attempting Aiwa RC-T501 decode");
+	ESP_LOGI(RMT_TAG, "Attempting Aiwa RC-T501 decode");
 	if (decodeAiwaRCT501(results))  return true ;
 #endif
 
 #if DECODE_DENON
-	DBG_PRINTLN("Attempting Denon decode");
+	ESP_LOGI(RMT_TAG, "Attempting Denon decode");
 	if (decodeDenon(results))  return true ;
 #endif
 
 #if DECODE_LEGO_PF
-	DBG_PRINTLN("Attempting Lego Power Functions");
+	ESP_LOGI(RMT_TAG, "Attempting Lego Power Functions");
 	if (decodeLegoPowerFunctions(results))  return true ;
 #endif
 
@@ -93,6 +104,9 @@ int  IRrecv::decode (decode_results *results)
 	// If you add any decodes, add them before this.
 	if (decodeHash(results))  return true ;
 
+#ifdef ESP32
+}
+#endif
 	// Throw away and start over
 	resume();
 	return false;

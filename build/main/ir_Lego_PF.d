@@ -36,14 +36,6 @@ ir_Lego_PF.o: \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/rom/ets_sys.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/soc.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_assert.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/rmt.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_reg.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/soc.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_access.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_attr.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_dport_access.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_struct.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/xtensa_config.h \
@@ -67,10 +59,22 @@ ir_Lego_PF.o: \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_crosscore_int.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/portbenchmark.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/task.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/newlib/include/limits.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/list.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/semphr.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/xtensa_api.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/ringbuf.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/rmt.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_reg.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/soc.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_reg.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_attr.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_dport_access.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_struct.h \
+ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/xtensa_api.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/gpio.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_types.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/gpio_reg.h \
@@ -81,10 +85,6 @@ ir_Lego_PF.o: \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/rom/gpio.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_intr_alloc.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/periph_ctrl.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/task.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/newlib/include/limits.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/list.h \
- C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h \
  C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp/esp-idf-template/main/ir_Lego_PF_BitStreamEncoder.h
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp/esp-idf-template/main/IRremote.h:
@@ -159,22 +159,6 @@ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/s
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_assert.h:
 
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/rmt.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_reg.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/soc.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_reg.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_access.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_attr.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_dport_access.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_struct.h:
-
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
@@ -221,13 +205,37 @@ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/fr
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/mpu_wrappers.h:
 
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/task.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/newlib/include/limits.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/list.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h:
+
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/semphr.h:
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h:
 
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/xtensa_api.h:
-
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/ringbuf.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/rmt.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_reg.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_reg.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/dport_access.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_attr.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_dport_access.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/soc/esp32/include/soc/rmt_struct.h:
+
+C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/xtensa_api.h:
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/gpio.h:
 
@@ -248,14 +256,6 @@ C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/rom/g
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/esp32/include/esp_intr_alloc.h:
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/driver/include/driver/periph_ctrl.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/task.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/newlib/include/limits.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/list.h:
-
-C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp-idf/components/freertos/include/freertos/queue.h:
 
 C:/Users/Nicolas/AppData/Roaming/SPB_Data/esp/esp-idf-template/main/ir_Lego_PF_BitStreamEncoder.h:
 /c/Users/Nicolas/AppData/Roaming/SPB_Data/esp/esp-idf-template/main/./ir_Lego_PF.cpp:

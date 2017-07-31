@@ -18,15 +18,15 @@
 #define MAIN_MAIN_IRREMOTE_H
 
 #include <stdio.h>
-
-
+#define ESP32
+#define IRPRONTO
 //------------------------------------------------------------------------------
 // Include the right Arduino header
 //
 #if defined(ARDUINO) && (ARDUINO >= 100)
 #	include <Arduino.h>
 #else
-#	if !defined(IRPRONTO) && defined(ESP32)
+#	if defined(IRPRONTO) && !defined(ESP32)
 #		include <WProgram.h>
 #	endif
 #endif
@@ -43,7 +43,7 @@
 //------------------------------------------------------------------------------
 // Information for the Interrupt Service Routine
 //
-#define RAWBUF  101  // Maximum length of raw duration buffer
+#define RAWBUF  500  // Maximum length of raw duration buffer
 
 typedef
 	struct {
@@ -60,10 +60,16 @@ irparams_t;
 
 // ISR State-Machine : Receiver States
 #define STATE_IDLE      2
-#define STATE_MARK      3
-#define STATE_SPACE     4
 #define STATE_STOP      5
 #define STATE_OVERFLOW  6
+
+#ifdef ESP32
+	#define STATE_RECEIVING 3
+	#define STATE_NOBUF		4
+#else
+	#define STATE_MARK      3
+	#define STATE_SPACE     4
+#endif
 
 // Allow all parts of the code access to the ISR data
 // NB. The data can be changed by the ISR at any time, even mid-function
